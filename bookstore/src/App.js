@@ -12,6 +12,7 @@ import BlogDetail from './Pages/BlogDetail';
 import WishList from './Pages/WishList';
 import LoginRegister from './Pages/LoginRegister';
 import Checkout from './Pages/Checkout';
+import Contact from './Pages/Contact';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/wishlist' element={<WishList />} />
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/login' element={<LoginRegister />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
         <Footer />
       </div>
