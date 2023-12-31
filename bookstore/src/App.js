@@ -19,8 +19,8 @@ function App() {
     <div class="site-wrapper" id="top">
       <div class="site-header header-4 mb--20 d-none d-lg-block">
         <HeaderTop />
-        <HeaderBottom />
         <HeaderMiddle />
+        <HeaderBottom />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/productDetail' element={<ProductDetail />}></Route>
