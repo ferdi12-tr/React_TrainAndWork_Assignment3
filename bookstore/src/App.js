@@ -5,6 +5,7 @@ import HeaderMiddle from './Components/Home/HeaderMiddle';
 import HeaderBottom from './Components/Home/HeaderBottom';
 import Footer from './Components/Home/Footer';
 import Home from "./Pages/Home"
+import ProductDetail from './Pages/ProductDetail';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <HeaderMiddle />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/productDetail' element={<ProductDetail />}></Route>
         </Routes>
         <Footer />
       </div>
