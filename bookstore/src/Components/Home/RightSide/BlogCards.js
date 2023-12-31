@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import BlogCard from '../../BlogCard'
+import BlogCard from '../BlogCardHome'
 
 export default class BlogCards extends Component {
     render() {

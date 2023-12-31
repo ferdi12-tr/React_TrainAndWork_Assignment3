@@ -6,7 +6,7 @@ import Product from '../Product'
 import NewFeatured from './RightSide/NewFeatured'
 import CategoryProduct from '../CategoryProduct'
 import CategoryProducts from './RightSide/CategoryProducts'
-import BlogCard from '../BlogCard'
+import BlogCard from './BlogCardHome'
 import BlogCards from './RightSide/BlogCards'
 
 export default class Promotion extends Component {
