@@ -13,8 +13,18 @@ import WishList from './Pages/WishList';
 import LoginRegister from './Pages/LoginRegister';
 import Checkout from './Pages/Checkout';
 import Contact from './Pages/Contact';
+import { useDispatch } from 'react-redux';
+import { fetchProducts } from './Redux/productSlice'
+import React, { useEffect } from 'react'
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchProducts())
+  }, [dispatch])
+
   return (
     <div class="site-wrapper" id="top">
       <div class="site-header header-4 mb--20 d-none d-lg-block">

@@ -1,0 +1,433 @@
+{
+  "Categories": [
+    {
+      "id": 1,
+      "title": "Biographies",
+      "desc": "Biography Category"
+    },
+    {
+      "id": 2,
+      "title": "Comics",
+      "desc": "Comic Category"
+    },
+    {
+      "id": 3,
+      "title": "CookBooks",
+      "desc": "CookBook Category"
+    },
+    {
+      "id": 4,
+      "title": "Bussiness & Money",
+      "desc": "Bussiness Category"
+    },
+    {
+      "id": 5,
+      "title": "Art & Photography",
+      "desc": "Photography Category"
+    },
+    {
+      "id": 6,
+      "title": "Travel",
+      "desc": "Travel Category"
+    }
+  ],
+  "Products": [
+    {
+      "id": 1,
+      "title": "Beats Wired On-Ear Headphone-Black",
+      "categoryid": 1,
+      "image": "./image/products/product-1.jpg",
+      "gallery": [
+        "./image/products/product-1.jpg",
+        "./image/products/product-2.jpg"
+      ],
+      "price": 50,
+      "filter": {
+        "new_arrival": false,
+        "featured": false,
+        "most_view": true
+      },
+      "date": "2023-01-01",
+      "slug": "beats_wired"
+    },
+    {
+      "id": 1,
+      "title": "Beats Wired On-Ear Headphone-Black",
+      "categoryid": 1,
+      "image": "./image/products/product-1.jpg",
+      "gallery": [
+        "./image/products/product-1.jpg",
+        "./image/products/product-2.jpg"
+      ],
+      "price": 50,
+      "filter": {
+        "new_arrival": true,
+        "featured": false,
+        "most_view": false
+      },
+      "date": "2023-01-01",
+      "slug": "beats_wired"
+    },
+    {
+      "id": 2,
+      "title": "Ten Minutes, I'll Give You The Truth About",
+      "categoryid": 2,
+      "image": "./image/products/product-2.jpg",
+      "gallery": [
+        "./image/products/product-2.jpg",
+        "./image/products/product-3.jpg"
+      ],
+      "price": 30,
+      "filter": {
+        "new_arrival": false,
+        "featured": true,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "ten_minutes"
+    },
+    {
+      "id": 3,
+      "title": "Ways To Get Through Book",
+      "categoryid": 3,
+      "image": "./image/products/product-3.jpg",
+      "gallery": [
+        "./image/products/product-3.jpg",
+        "./image/products/product-4.jpg"
+      ],
+      "price": 40,
+      "filter": {
+        "new_arrival": false,
+        "featured": false,
+        "most_view": true
+      },
+      "date": "2023-01-02",
+      "slug": "ways_to_get_through_book"
+    },
+    {
+      "id": 4,
+      "title": "From Destruction By Social Media",
+      "categoryid": 4,
+      "image": "./image/products/product-4.jpg",
+      "gallery": [
+        "./image/products/product-4.jpg",
+        "./image/products/product-5.jpg"
+      ],
+      "price": 60,
+      "filter": {
+        "new_arrival": true,
+        "featured": false,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "from_destruction_by_social_media"
+    },
+    {
+      "id": 4,
+      "title": "From Destruction By Social Media",
+      "categoryid": 4,
+      "image": "./image/products/product-4.jpg",
+      "gallery": [
+        "./image/products/product-4.jpg",
+        "./image/products/product-5.jpg"
+      ],
+      "price": 60,
+      "filter": {
+        "new_arrival": false,
+        "featured": false,
+        "most_view": true
+      },
+      "date": "2023-01-02",
+      "slug": "from_destruction_by_social_media"
+    },
+    {
+      "id": 5,
+      "title": "Read This Controversial Book",
+      "categoryid": 5,
+      "image": "./image/products/product-5.jpg",
+      "gallery": [
+        "./image/products/product-5.jpg",
+        "./image/products/product-6.jpg"
+      ],
+      "price": 70,
+      "filter": {
+        "new_arrival": false,
+        "featured": true,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "read_this_controversial_book"
+    },
+    {
+      "id": 6,
+      "title": "Lightweight Portable Headphone",
+      "categoryid": 1,
+      "image": "./image/products/product-6.jpg",
+      "gallery": [
+        "./image/products/product-6.jpg",
+        "./image/products/product-7.jpg"
+      ],
+      "price": 50,
+      "filter": {
+        "new_arrival": false,
+        "featured": false,
+        "most_view": true
+      },
+      "date": "2023-01-02",
+      "slug": "lightweight_portable_headphone"
+    },
+    {
+      "id": 7,
+      "title": "Way To Have More Book",
+      "categoryid": 2,
+      "image": "./image/products/product-7.jpg",
+      "gallery": [
+        "./image/products/product-7.jpg",
+        "./image/products/product-8.jpg"
+      ],
+      "price": 90,
+      "filter": {
+        "new_arrival": true,
+        "featured": false,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "way_to_have_more_book"
+    },
+    {
+      "id": 8,
+      "title": "Rock Solid",
+      "categoryid": 3,
+      "image": "./image/products/product-8.jpg",
+      "gallery": [
+        "./image/products/product-8.jpg",
+        "./image/products/product-9.jpg"
+      ],
+      "price": 25,
+      "filter": {
+        "new_arrival": false,
+        "featured": true,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "rock_solid"
+    },
+    {
+      "id": 9,
+      "title": "Cats Language",
+      "categoryid": 6,
+      "image": "./image/products/product-9.jpg",
+      "gallery": [
+        "./image/products/product-9.jpg",
+        "./image/products/product-10.jpg"
+      ],
+      "price": 78,
+      "filter": {
+        "new_arrival": false,
+        "featured": false,
+        "most_view": true
+      },
+      "date": "2023-01-02",
+      "slug": "cats_language"
+    },
+    {
+      "id": 10,
+      "title": "Enlight Yourself",
+      "categoryid": 1,
+      "image": "./image/products/product-10.jpg",
+      "gallery": [
+        "./image/products/product-10.jpg",
+        "./image/products/product-11.jpg"
+      ],
+      "price": 78,
+      "filter": {
+        "new_arrival": true,
+        "featured": false,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "enlight_yourself"
+    },
+    {
+      "id": 11,
+      "title": "Bangladesh Power",
+      "categoryid": 1,
+      "image": "./image/products/product-11.jpg",
+      "gallery": [
+        "./image/products/product-11.jpg",
+        "./image/products/product-12.jpg"
+      ],
+      "price": 63,
+      "filter": {
+        "new_arrival": false,
+        "featured": true,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "bangladesh_power"
+    },
+    {
+      "id": 12,
+      "title": "Clean Is Design",
+      "categoryid": 2,
+      "image": "./image/products/product-12.jpg",
+      "gallery": [
+        "./image/products/product-12.jpg",
+        "./image/products/product-13.jpg"
+      ],
+      "price": 80,
+      "filter": {
+        "new_arrival": false,
+        "featured": false,
+        "most_view": true
+      },
+      "date": "2023-01-02",
+      "slug": "clean_is_design"
+    },
+    {
+      "id": 1,
+      "title": "Beats Wired On-Ear Headphone-Black",
+      "categoryid": 1,
+      "image": "./image/products/product-1.jpg",
+      "gallery": [
+        "./image/products/product-1.jpg",
+        "./image/products/product-2.jpg"
+      ],
+      "price": 50,
+      "filter": {
+        "new_arrival": true,
+        "featured": false,
+        "most_view": false
+      },
+      "date": "2023-01-01",
+      "slug": "beats_wired"
+    },
+    {
+      "id": 2,
+      "title": "Ten Minutes, I'll Give You The Truth About",
+      "categoryid": 2,
+      "image": "./image/products/product-2.jpg",
+      "gallery": [
+        "./image/products/product-2.jpg",
+        "./image/products/product-3.jpg"
+      ],
+      "price": 30,
+      "filter": {
+        "new_arrival": true,
+        "featured": false,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "ten_minutes"
+    },
+    {
+      "id": 4,
+      "title": "From Destruction By Social Media",
+      "categoryid": 4,
+      "image": "./image/products/product-4.jpg",
+      "gallery": [
+        "./image/products/product-4.jpg",
+        "./image/products/product-5.jpg"
+      ],
+      "price": 60,
+      "filter": {
+        "new_arrival": false,
+        "featured": true,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "from_destruction_by_social_media"
+    },
+    {
+      "id": 10,
+      "title": "Enlight Yourself",
+      "categoryid": 1,
+      "image": "./image/products/product-10.jpg",
+      "gallery": [
+        "./image/products/product-10.jpg",
+        "./image/products/product-11.jpg"
+      ],
+      "price": 78,
+      "filter": {
+        "new_arrival": false,
+        "featured": true,
+        "most_view": false
+      },
+      "date": "2023-01-02",
+      "slug": "enlight_yourself"
+    }
+  ],
+  "Users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "hashedpassword123"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "password": "hashedpassword456"
+    }
+  ],
+  "Blogs": [
+    {
+      "id": 1,
+      "title": "Tech Blog",
+      "short_desc": "Latest tech trends",
+      "long_desc": "In-depth articles on the latest technology",
+      "image": "tech-blog-image.jpg",
+      "date": "2023-01-03"
+    },
+    {
+      "id": 2,
+      "title": "Fashion Blog",
+      "short_desc": "Trending fashion styles",
+      "long_desc": "Explore the latest fashion trends and styles",
+      "image": "fashion-blog-image.jpg",
+      "date": "2023-01-04"
+    }
+  ],
+  "Wishlist": [
+    {
+      "id": 1,
+      "product_id": 1,
+      "user_id": 1
+    },
+    {
+      "id": 2,
+      "product_id": 2,
+      "user_id": 2
+    }
+  ],
+  "Orders": [
+    {
+      "orderid": 1,
+      "user_id": 1,
+      "products": [
+        {
+          "product_id": 1,
+          "date": "2023-01-05",
+          "status": "Shipped"
+        },
+        {
+          "product_id": 2,
+          "date": "2023-01-06",
+          "status": "Processing"
+        }
+      ]
+    },
+    {
+      "orderid": 2,
+      "user_id": 2,
+      "products": [
+        {
+          "product_id": 1,
+          "date": "2023-01-07",
+          "status": "Delivered"
+        }
+      ]
+    }
+  ]
+}

@@ -7,17 +7,16 @@ export default class Product extends Component {
                 <div className="product-card">
                     <div className="product-header">
                         <a href="#" className="author">
-                            jpple
+                            Fkoca
                         </a>
-                        <h3><a href="product-details.html">Rpple iPad with
-                            Retina Display</a></h3>
+                        <h3><a href="product-details.html">{this.props.product.title}</a></h3>
                     </div>
                     <div className="product-card--body">
                         <div className="card-image">
-                            <img src="./image/products/product-1.jpg" alt="" />
+                            <img src={this.props.product.image} alt="" />
                             <div className="hover-contents">
                                 <a href="product-details.html" className="hover-image">
-                                    <img src="./image/products/product-1.jpg" alt="" />
+                                    <img src={this.props.product.gallery[1]} alt="" />
                                 </a>
                                 <div className="hover-btns">
                                     <a href="cart.html" className="single-btn">
@@ -26,9 +25,6 @@ export default class Product extends Component {
                                     <a href="wishlist.html" className="single-btn">
                                         <i className="fas fa-heart" />
                                     </a>
-                                    <a href="compare.html" className="single-btn">
-                                        <i className="fas fa-random" />
-                                    </a>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#quickModal" className="single-btn">
                                         <i className="fas fa-eye" />
                                     </a>
@@ -36,8 +32,8 @@ export default class Product extends Component {
                             </div>
                         </div>
                         <div className="price-block">
-                            <span className="price">£51.20</span>
-                            <del className="price-old">£51.20</del>
+                            <span className="price">£{this.props.product.price}</span>
+                            <del className="price-old">£{this.props.product.price + 10}</del>
                             <span className="price-discount">20%</span>
                         </div>
                     </div>
