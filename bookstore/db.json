@@ -374,19 +374,39 @@
   "Blogs": [
     {
       "id": 1,
-      "title": "Tech Blog",
+      "title": "Use BLOG TITLE To Make Someone Fall",
       "short_desc": "Latest tech trends",
-      "long_desc": "In-depth articles on the latest technology",
-      "image": "tech-blog-image.jpg",
-      "date": "2023-01-03"
+      "long_desc": "Maria Denardo is the Fashion Director theFashion Spot at. Prior to joining tFS, she worked as",
+      "image": "./image/others/blog-grid-1.jpg",
+      "date": "2023-01-03",
+      "slug": "blog1"
     },
     {
       "id": 2,
-      "title": "Fashion Blog",
+      "title": "Ho To (Do) BLOG TITLE Without Your",
       "short_desc": "Trending fashion styles",
-      "long_desc": "Explore the latest fashion trends and styles",
-      "image": "fashion-blog-image.jpg",
-      "date": "2023-01-04"
+      "long_desc": "Maria Denardo is the Fashion Director theFashion Spot at. Prior to joining tFS, she worked as",
+      "image": "./image/others/blog-grid-2.jpg",
+      "date": "2023-01-04",
+      "slug": "blog2"
+    },
+    {
+      "id": 3,
+      "title": "How to Grow Epiphytic Tropical Plants",
+      "short_desc": "Trending fashion styles",
+      "long_desc": "Maria Denardo is the Fashion Director theFashion Spot at. Prior to joining tFS, she worked as",
+      "image": "./image/others/blog-grid-3.jpg",
+      "date": "2023-01-04",
+      "slug": "blog3"
+    },
+    {
+      "id": 4,
+      "title": "Grow to Epiphytic Tropical Plants",
+      "short_desc": "Trending fashion styles",
+      "long_desc": "Maria Denardo is the Fashion Director theFashion Spot at. Prior to joining tFS, she worked as",
+      "image": "./image/others/blog-grid-4.jpg",
+      "date": "2023-01-04",
+      "slug": "blog4"
     }
   ],
   "Wishlist": [

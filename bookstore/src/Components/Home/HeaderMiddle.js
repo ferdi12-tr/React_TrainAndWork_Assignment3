@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class HeaderMiddle extends Component {
     render() {
@@ -7,9 +8,9 @@ export default class HeaderMiddle extends Component {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-lg-3">
-                            <a href="index.html" className="site-brand">
+                            <Link to={"/"} className="site-brand">
                                 <img src="image/logo.png" alt="" />
-                            </a>
+                            </Link>
                         </div>
                         <div className="col-lg-5">
                             <div className="header-search-block">

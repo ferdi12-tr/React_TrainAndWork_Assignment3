@@ -33,9 +33,9 @@ function App() {
         <HeaderBottom />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/productDetail' element={<ProductDetail />}></Route>
+          <Route path='/productDetail/:slug' element={<ProductDetail />} />
           <Route path='/blogs' element={<Blogs />}></Route>
-          <Route path='/blogDetail' element={<BlogDetail />} />
+          <Route path='/blogDetail/:slug' element={<BlogDetail />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/wishlist' element={<WishList />} />
           <Route path='/checkout' element={<Checkout />} />

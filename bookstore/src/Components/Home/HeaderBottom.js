@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 export default class HeaderBottom extends Component {
     render() {
@@ -148,7 +149,7 @@ export default class HeaderBottom extends Component {
                                         </ul>
                                     </li>
                                     <li className="menu-item">
-                                        <a href="">Blog</a>
+                                        <Link to={"/blogs"}>Blog</Link>
                                     </li>
                                     <li className="menu-item">
                                         <a href="contact.html">Contact</a>

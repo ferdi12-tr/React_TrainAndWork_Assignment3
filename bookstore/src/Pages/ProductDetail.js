@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LookModal from '../Components/LookModal'
 import Product from '../Components/Product'
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function ProductDetail() {
+    const { slug } = useParams();
+    const [product, setProduct] = useState(null)
+    const products = useSelector(state => state.products.products)
+
+    useEffect(() => {
+        let product = products.find(product => product.slug === slug)
+        setProduct(product)
+    }, [slug])
+
     return (
-        <>
+        <>{product &&
             <div>
                 <section className="breadcrumb-section">
                     <h2 className="sr-only">Site Breadcrumb</h2>
@@ -23,62 +34,18 @@ export default function ProductDetail() {
                     <div className="container">
                         <div className="row  mb--60">
                             <div className="col-lg-5 mb--30">
-                                <div className="product-details-slider sb-slick-slider arrow-type-two" data-slick-setting="{
-        &quot;slidesToShow&quot;: 1,
-        &quot;arrows&quot;: false,
-        &quot;fade&quot;: true,
-        &quot;draggable&quot;: false,
-        &quot;swipe&quot;: false,
-        &quot;asNavFor&quot;: &quot;.product-slider-nav&quot;
-        }">
+                                <div className="product-details-slider sb-slick-slider arrow-type-two">
                                     <div className="single-slide">
-                                        <img src="./image/products/product-details-1.jpg" alt="" />
+                                        <img src={"/" + product.gallery[0]} alt="" />
                                     </div>
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-2.jpg" alt="" />
-                                    </div>
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-3.jpg" alt="" />
-                                    </div>
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-4.jpg" alt="" />
-                                    </div>
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-5.jpg" alt="" />
-                                    </div>
+
                                 </div>
-                                <div className="mt--30 product-slider-nav sb-slick-slider arrow-type-two" data-slick-setting="{
-      &quot;infinite&quot;:true,
-        &quot;autoplay&quot;: true,
-        &quot;autoplaySpeed&quot;: 8000,
-        &quot;slidesToShow&quot;: 4,
-        &quot;arrows&quot;: true,
-        &quot;prevArrow&quot;:{&quot;buttonClass&quot;: &quot;slick-prev&quot;,&quot;iconClass&quot;:&quot;fa fa-chevron-left&quot;},
-        &quot;nextArrow&quot;:{&quot;buttonClass&quot;: &quot;slick-next&quot;,&quot;iconClass&quot;:&quot;fa fa-chevron-right&quot;},
-        &quot;asNavFor&quot;: &quot;.product-details-slider&quot;,
-        &quot;focusOnSelect&quot;: true
-        }">
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-1.jpg" alt="" />
-                                    </div>
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-2.jpg" alt="" />
-                                    </div>
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-3.jpg" alt="" />
-                                    </div>
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-4.jpg" alt="" />
-                                    </div>
-                                    <div className="single-slide">
-                                        <img src="./image/products/product-details-5.jpg" alt="" />
-                                    </div>
-                                </div>
+
                             </div>
                             <div className="col-lg-7">
                                 <div className="product-details-info pl-lg--30 ">
                                     <p className="tag-block">Tags: <a href="#">Movado</a>, <a href="#">Omega</a></p>
-                                    <h3 className="product-title">Beats EP Wired On-Ear Headphone-Black</h3>
+                                    <h3 className="product-title">{product.title}</h3>
                                     <ul className="list-unstyled">
                                         <li>Ex Tax: <span className="list-value"> £60.24</span></li>
                                         <li>Brands: <a href="#" className="list-value font-weight-bold"> Canon</a></li>
@@ -87,8 +54,8 @@ export default function ProductDetail() {
                                         <li>Availability: <span className="list-value"> In Stock</span></li>
                                     </ul>
                                     <div className="price-block">
-                                        <span className="price-new">£73.79</span>
-                                        <del className="price-old">£91.86</del>
+                                        <span className="price-new">£{product.price}</span>
+                                        <del className="price-old">£{product.price + 10}</del>
                                     </div>
                                     <div className="rating-widget">
                                         <div className="rating-block">
@@ -121,7 +88,6 @@ export default function ProductDetail() {
                                     </div>
                                     <div className="compare-wishlist-row">
                                         <a href="#" className="add-link"><i className="fas fa-heart" />Add to Wish List</a>
-                                        <a href="#" className="add-link"><i className="fas fa-random" />Add to Compare</a>
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +162,7 @@ export default function ProductDetail() {
                                                 <input type="radio" name="star" id="star5" />
                                                 <label htmlFor="star5" />
                                             </span>
-                                            <form action="https://htmldemo.net/pustok/pustok/" className="mt--15 site-form ">
+                                            <form action="" className="mt--15 site-form ">
                                                 <div className="row">
                                                     <div className="col-12">
                                                         <div className="form-group">
@@ -235,32 +201,10 @@ export default function ProductDetail() {
                             </div>
                         </div>
                     </div>
-                    <section className>
-                        <div className="container">
-                            <div className="section-title section-title--bordered">
-                                <h2>RELATED PRODUCTS</h2>
-                            </div>
-                            <div className="product-slider sb-slick-slider slider-border-single-row" data-slick-setting="{
-          &quot;autoplay&quot;: true,
-          &quot;autoplaySpeed&quot;: 8000,
-          &quot;slidesToShow&quot;: 4,
-          &quot;dots&quot;:true
-      }" data-slick-responsive="[
-          {&quot;breakpoint&quot;:1200, &quot;settings&quot;: {&quot;slidesToShow&quot;: 4} },
-          {&quot;breakpoint&quot;:992, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3} },
-          {&quot;breakpoint&quot;:768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2} },
-          {&quot;breakpoint&quot;:480, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} }
-      ]">
-                                {[1, 2, 3, 4, 5].map((product, index) => {
-                                    return <Product />
-                                })}
-                            </div>
-                        </div>
-                    </section>
                     <LookModal />
                 </main>
             </div>
-
+        }
         </>
     )
 }

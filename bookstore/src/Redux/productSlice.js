@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { createDispatchHook } from 'react-redux'
 
 const initialState = {
     products: [],

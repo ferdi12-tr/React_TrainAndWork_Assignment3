@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function BlogDetail() {
+
+    const { slug } = useParams();
+    const [blog, setBlog] = useState(null)
+    const blogs = useSelector(state => state.blogs.blogs)
+
+    useEffect(() => {
+        let blog = blogs.find(blog => blog.slug === slug)
+        setBlog(blog)
+    }, [slug])
+
     return (
         <>
-            <div>
+            {blog && <div>
                 <section className="breadcrumb-section">
                     <h2 className="sr-only">Site Breadcrumb</h2>
                     <div className="container">
@@ -21,11 +33,11 @@ export default function BlogDetail() {
                     <div className="container">
                         <div className="blog-post post-details mb--50">
                             <div className="blog-image">
-                                <img src="./image/others/blog-img-big-1.jpg" alt="" />
+                                <img src={"/" + blog.image} alt="" />
                             </div>
                             <div className="blog-content mt--30">
                                 <header>
-                                    <h3 className="blog-title"> How BLOG TITLE Made Me A Better Salesperson</h3>
+                                    <h3 className="blog-title"> {blog.title}</h3>
                                     <div className="post-meta">
                                         <span className="post-author">
                                             <i className="fas fa-user" />
@@ -36,7 +48,7 @@ export default function BlogDetail() {
                                         <span className="post-date">
                                             <i className="far fa-calendar-alt" />
                                             <span className="text-gray">On : </span>
-                                            March 10, 2015
+                                            {blog.date}
                                         </span>
                                     </div>
                                 </header>
@@ -117,7 +129,7 @@ export default function BlogDetail() {
                             <h3>3 Comments</h3>
                             <div className="single-comment">
                                 <div className="comment-avatar">
-                                    <img src="image/icon/author-logo.png" alt="" />
+                                    <img src="/./image/icon/author-logo.png" alt="" />
                                 </div>
                                 <div className="comment-text">
                                     <h5 className="author"> <a href="#"> Author</a></h5>
@@ -128,7 +140,7 @@ export default function BlogDetail() {
                             </div>
                             <div className="single-comment">
                                 <div className="comment-avatar">
-                                    <img src="image/icon/author-logo.png" alt="" />
+                                    <img src="/./image/icon/author-logo.png" alt="" />
                                 </div>
                                 <div className="comment-text">
                                     <h5 className="author"> <a href="#">Jack</a></h5>
@@ -139,7 +151,7 @@ export default function BlogDetail() {
                             </div>
                             <div className="single-comment">
                                 <div className="comment-avatar">
-                                    <img src="image/icon/author-logo.png" alt="" />
+                                    <img src="/./image/icon/author-logo.png" alt="" />
                                 </div>
                                 <div className="comment-text">
                                     <h5 className="author"> <a href="#">Dexter</a></h5>
@@ -152,7 +164,7 @@ export default function BlogDetail() {
                         <div className="replay-form-wrapper">
                             <h3 className="mt-0">LEAVE A REPLY</h3>
                             <p>Your email address will not be published. Required fields are marked *</p>
-                            <form action="https://htmldemo.net/pustok/pustok/" className="blog-form">
+                            <form action="" className="blog-form">
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="form-group">
@@ -188,7 +200,7 @@ export default function BlogDetail() {
                         </div>
                     </div>
                 </section>
-            </div>
+            </div>}
 
         </>
     )
