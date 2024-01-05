@@ -43,61 +43,43 @@ export default function NewFeatured() {
                 </ul>
                 <div className="tab-content space-db--30" id="myTabContent">
                     <div className="tab-pane show active" id="shop" role="tabpanel" aria-labelledby="shop-tab">
-                        <div className="product-slider multiple-row slider-border-multiple-row  sb-slick-slider" data-slick-setting="{
-                  &quot;autoplay&quot;: true,
-                  &quot;autoplaySpeed&quot;: 8000,
-                  &quot;slidesToShow&quot;: 3,
-                  &quot;rows&quot;:2,
-                  &quot;dots&quot;:true
-              }" data-slick-responsive="[
-                  {&quot;breakpoint&quot;:992, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3} },
-                  {&quot;breakpoint&quot;:768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2} },
-                  {&quot;breakpoint&quot;:480, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} },
-                  {&quot;breakpoint&quot;:320, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} }
-              ]">
-                            {featuredProducts && featuredProducts.map((product, index) => {
-                                return <Product key={index} product={product} />
-                            })}
+                        <div className="product-slider multiple-row slider-border-multiple-row  sb-slick-slider">
+                            <div className="container">
+                                <div className="row">
+                                    {featuredProducts && featuredProducts.map((product, index) => {
+                                        return <div className="col-4">
+                                            <Product key={index} product={product} />
+                                        </div>
+                                    })}
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="tab-pane" id="men" role="tabpanel" aria-labelledby="men-tab">
-                        <div className="product-slider multiple-row slider-border-multiple-row  sb-slick-slider" data-slick-setting="{
-                              &quot;autoplay&quot;: true,
-                              &quot;autoplaySpeed&quot;: 8000,
-                              &quot;slidesToShow&quot;: 3,
-                              &quot;rows&quot;:2,
-                              &quot;dots&quot;:true
-                              }" data-slick-responsive="[
-                      {&quot;breakpoint&quot;:992, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3} },
-                      {&quot;breakpoint&quot;:768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2} },
-                      {&quot;breakpoint&quot;:480, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} },
-                      {&quot;breakpoint&quot;:320, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} }
-                  ]">
-                            {newArrivalProducts && newArrivalProducts.map((product, index) => {
-                                return <Product key={index} product={product} />
-                            })}
-
+                        <div className="product-slider multiple-row slider-border-multiple-row  sb-slick-slider">
+                            <div className="container">
+                                <div className="row">
+                                    {newArrivalProducts && newArrivalProducts.map((product, index) => {
+                                        return <div className="col-4">
+                                            <Product key={index} product={product} />
+                                        </div>
+                                    })}
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="tab-pane" id="woman" role="tabpanel" aria-labelledby="woman-tab">
-                        <div className="product-slider multiple-row slider-border-multiple-row  sb-slick-slider" data-slick-setting="{
-                              &quot;autoplay&quot;: true,
-                              &quot;autoplaySpeed&quot;: 8000,
-                              &quot;slidesToShow&quot;: 3,
-                              &quot;rows&quot;:2,
-                              &quot;dots&quot;:true
-                          }" data-slick-responsive="[
-                                  {&quot;breakpoint&quot;:992, &quot;settings&quot;: {&quot;slidesToShow&quot;: 3} },
-                                  {&quot;breakpoint&quot;:768, &quot;settings&quot;: {&quot;slidesToShow&quot;: 2} },
-                                  {&quot;breakpoint&quot;:480, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} },
-                                  {&quot;breakpoint&quot;:320, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} }
-                              ]">
-                            {mostViewProducts && mostViewProducts.map((product, index) => {
-                                return <Product key={index} product={product} />
-                            })}
-                            {newArrivalProducts && newArrivalProducts.map((product, index) => {
-                                return <Product key={index} product={product} />
-                            })}
+                        <div className="product-slider multiple-row slider-border-multiple-row  sb-slick-slider">
+                            <div className="container">
+                                <div className="row">
+                                    {mostViewProducts && mostViewProducts.map((product, index) => {
+                                        return <div className="col-4">
+                                            <Product key={index} product={product} />
+                                        </div>
+                                    })}
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
