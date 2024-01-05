@@ -1,22 +1,18 @@
-import React, { Component } from 'react'
-import BlogCard from '../BlogCardHome'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux';
+import BlogCardHome from '../BlogCardHome';
 
-export default class BlogCards extends Component {
-    render() {
-        return (
-            <div className="single-block">
-                <div className="blog-slider sb-slick-slider slider-one-column" data-slick-setting="{
-                  &quot;autoplay&quot;: false,
-                  &quot;autoplaySpeed&quot;: 8000,
-                  &quot;slidesToShow&quot;: 1,
-                  &quot;dots&quot;: true
-              }">
+export default function BlogCards() {
+    const blogs = useSelector(state => state.blogs.blogs)
+    return (
+        blogs && <div className="single-block">
+            <div className="blog-slider sb-slick-slider slider-one-column">
 
-                    {[1, 2, 3].map((card, index) => {
-                        return <BlogCard />
-                    })}
-                </div>
+                {blogs.slice(0, 3).map((card, index) => {
+                    return <BlogCardHome key={index} blogCart={card} />
+                })}
             </div>
-        )
-    }
+        </div>
+    )
 }
+

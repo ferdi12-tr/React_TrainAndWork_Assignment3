@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import { blogRequestFailed } from '../Redux/blogSlice';
 
 export default class BlogCard extends Component {
     render() {
@@ -12,7 +13,7 @@ export default class BlogCard extends Component {
                     </Link>
                     <div className="card-content">
                         <h3 className="title"><Link to={"/blogDetail/" + blog.slug}>{blog.title}</Link></h3>
-                        <p className="post-meta"><span>{blog.date} </span> | <a href="#">Hastech</a></p>
+                        <p className="post-meta"><span>{blog.date} </span> | <a href="#">{blog.author}</a></p>
                         <article>
                             <h2 className="sr-only">
                                 Blog Article

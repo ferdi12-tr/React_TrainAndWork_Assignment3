@@ -1,33 +1,33 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
-export default class BlogCard extends Component {
+export default class BlogCardHome extends Component {
     render() {
+        const { blogCart } = this.props
         return (
             <div className="single-slide">
                 <div className="blog-card">
                     <div className="image">
-                        <img src="./image/others/home-blog-1.jpg" alt="" />
+                        <img src={blogCart.image} alt="" />
                     </div>
                     <div className="content">
                         <div className="content-header">
                             <div className="date-badge">
                                 <span className="date">
-                                    30
+                                    {blogCart.date.split('-')[2]}
                                 </span>
                                 <span className="month">
-                                    OCT
+                                    {blogCart.date.split('-')[1]}
                                 </span>
                             </div>
-                            <h3 className="title"><a href="blog-details.html">How to Water and Care
-                                for Mounted</a></h3>
+                            <h3 className="title"><Link to={"/blogDetail/" + blogCart.slug}>{blogCart.title}</Link></h3>
                         </div>
-                        <p className="meta-para"><i className="fas fa-user-edit" />Post by <a href="#">Hastech</a></p>
+                        <p className="meta-para"><i className="fas fa-user-edit" />Post by <a href="#">{blogCart.author}</a></p>
                         <article className="blog-paragraph">
                             <h2 className="sr-only">blog-paragraph</h2>
-                            <p>Virtual reality and 3-D technology are already well-established
-                                in the entertainment...</p>
+                            <p>{blogCart.long_desc}</p>
                         </article>
-                        <a href="blog-details.html" className="card-link">Read More <i className="fas fa-chevron-circle-right" /></a>
+                        <Link to={"/blogDetail/" + blogCart.slug} className="card-link">Read More <i className="fas fa-chevron-circle-right" /></Link>
                     </div>
                 </div>
             </div>

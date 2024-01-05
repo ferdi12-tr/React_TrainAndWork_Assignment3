@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
 
 export default function BlogDetail() {
 
@@ -22,7 +23,7 @@ export default function BlogDetail() {
                         <div className="breadcrumb-contents">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li className="breadcrumb-item"><Link to={"/"}>Home</Link></li>
                                     <li className="breadcrumb-item active">Blog Details</li>
                                 </ol>
                             </nav>
@@ -42,7 +43,7 @@ export default function BlogDetail() {
                                         <span className="post-author">
                                             <i className="fas fa-user" />
                                             <span className="text-gray">Posted by : </span>
-                                            admin
+                                            {blog.author}
                                         </span>
                                         <span className="post-separator">|</span>
                                         <span className="post-date">

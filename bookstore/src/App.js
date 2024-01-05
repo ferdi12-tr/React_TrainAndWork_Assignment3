@@ -16,6 +16,7 @@ import Contact from './Pages/Contact';
 import { useDispatch } from 'react-redux';
 import { fetchProducts } from './Redux/productSlice'
 import React, { useEffect } from 'react'
+import { fetchBlogs } from './Redux/blogSlice';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchProducts())
+    dispatch(fetchBlogs())
   }, [dispatch])
 
   return (

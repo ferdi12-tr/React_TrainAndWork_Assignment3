@@ -5,14 +5,7 @@ import { fetchBlogs } from '../Redux/blogSlice'
 import { useSelector } from 'react-redux';
 
 export default function Blogs() {
-
-    const dispatch = useDispatch()
     const blogs = useSelector(state => state.blogs.blogs)
-    useEffect(() => {
-        dispatch(fetchBlogs())
-        console.log(blogs)
-    }, [dispatch])
-
     return (
         <>
             <section className="breadcrumb-section">

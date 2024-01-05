@@ -379,7 +379,8 @@
       "long_desc": "Maria Denardo is the Fashion Director theFashion Spot at. Prior to joining tFS, she worked as",
       "image": "./image/others/blog-grid-1.jpg",
       "date": "2023-01-03",
-      "slug": "blog1"
+      "slug": "blog1",
+      "author": "fkoca"
     },
     {
       "id": 2,
@@ -388,7 +389,8 @@
       "long_desc": "Maria Denardo is the Fashion Director theFashion Spot at. Prior to joining tFS, she worked as",
       "image": "./image/others/blog-grid-2.jpg",
       "date": "2023-01-04",
-      "slug": "blog2"
+      "slug": "blog2",
+      "author": "fkoca"
     },
     {
       "id": 3,
@@ -397,7 +399,8 @@
       "long_desc": "Maria Denardo is the Fashion Director theFashion Spot at. Prior to joining tFS, she worked as",
       "image": "./image/others/blog-grid-3.jpg",
       "date": "2023-01-04",
-      "slug": "blog3"
+      "slug": "blog3",
+      "author": "fkoca"
     },
     {
       "id": 4,
@@ -406,7 +409,8 @@
       "long_desc": "Maria Denardo is the Fashion Director theFashion Spot at. Prior to joining tFS, she worked as",
       "image": "./image/others/blog-grid-4.jpg",
       "date": "2023-01-04",
-      "slug": "blog4"
+      "slug": "blog4",
+      "author": "fkoca"
     }
   ],
   "Wishlist": [
