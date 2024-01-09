@@ -13,10 +13,13 @@ import WishList from './Pages/WishList';
 import LoginRegister from './Pages/LoginRegister';
 import Checkout from './Pages/Checkout';
 import Contact from './Pages/Contact';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from './Redux/productSlice'
 import React, { useEffect } from 'react'
 import { fetchBlogs } from './Redux/blogSlice';
+import {
+  fetchCategories
+} from './Redux/categorySlice';
 
 function App() {
 
@@ -25,6 +28,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchProducts())
     dispatch(fetchBlogs())
+    dispatch(fetchCategories())
   }, [dispatch])
 
   return (
