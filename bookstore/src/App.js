@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import HeaderTop from './Components/Home/HeaderTop';
 import HeaderMiddle from './Components/Home/HeaderMiddle';
 import HeaderBottom from './Components/Home/HeaderBottom';
@@ -13,17 +13,39 @@ import WishList from './Pages/WishList';
 import LoginRegister from './Pages/LoginRegister';
 import Checkout from './Pages/Checkout';
 import Contact from './Pages/Contact';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchProducts } from './Redux/productSlice'
 import React, { useEffect } from 'react'
 import { fetchBlogs } from './Redux/blogSlice';
 import {
   fetchCategories
 } from './Redux/categorySlice';
+import { getAuthToken, getTokenExpireDate } from './Utils/auth';
 
 function App() {
 
+  const navigate = useNavigate()
   const dispatch = useDispatch()
+  const token = getAuthToken()
+
+  useEffect(() => {
+    if (!token) {
+      return;
+    }
+
+    if (token === "EXPIRED") {
+      localStorage.removeItem("auth")
+    }
+
+    const tokenDuration = getTokenExpireDate()
+    console.log(tokenDuration)
+
+    setTimeout(() => {
+      localStorage.removeItem("auth")
+      navigate("/login")
+    }, tokenDuration);
+
+  }, [token])
 
   useEffect(() => {
     dispatch(fetchProducts())
