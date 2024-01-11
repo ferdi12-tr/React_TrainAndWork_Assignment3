@@ -42,7 +42,7 @@ export const fetchCategories = () => async (dispatch) => {
             headers: {
                 accept: 'text/plain',
                 ContentType: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6IkZlcmRpIiwibmJmIjoxNzA0ODIwNzM4LCJleHAiOjE3MDQ4MjEzMzgsImlzcyI6Iklzc3VlckluZm9ybWF0aW9uIiwiYXVkIjoiQXVkaWVuY2VJbmZvcm1hdGlvbiJ9.I2zRNS_ocyaiVSRSmfanv2kyqOMwq-kKiuORI1j4tMM'
+                // Authorization: 'Bearer'
             }
         })
         const data = await response.json()

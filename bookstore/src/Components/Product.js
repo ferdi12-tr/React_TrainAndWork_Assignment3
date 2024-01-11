@@ -22,7 +22,7 @@ export default class Product extends Component {
                             <img src={product.image} alt="" />
                             <div className="hover-contents">
                                 <Link to={"productDetail/" + product.slug} className="hover-image">
-                                    <img src={product.gallery[1]} alt="" />
+                                    <img src={product.image} alt="" />
                                 </Link>
                                 <div className="hover-btns">
                                     <a href="cart.html" className="single-btn">

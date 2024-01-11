@@ -36,7 +36,7 @@ export default function ProductDetail() {
                             <div className="col-lg-5 mb--30">
                                 <div className="product-details-slider sb-slick-slider arrow-type-two">
                                     <div className="single-slide">
-                                        <img src={"/" + product.gallery[0]} alt="" />
+                                        <img src={product.image} alt="" />
                                     </div>
 
                                 </div>
@@ -45,7 +45,7 @@ export default function ProductDetail() {
                             <div className="col-lg-7">
                                 <div className="product-details-info pl-lg--30 ">
                                     <p className="tag-block">Tags: <a href="#">Movado</a>, <a href="#">Omega</a></p>
-                                    <h3 className="product-title">{product.title}</h3>
+                                    <h3 className="product-title">{product.name}</h3>
                                     <ul className="list-unstyled">
                                         <li>Ex Tax: <span className="list-value"> £60.24</span></li>
                                         <li>Brands: <a href="#" className="list-value font-weight-bold"> Canon</a></li>

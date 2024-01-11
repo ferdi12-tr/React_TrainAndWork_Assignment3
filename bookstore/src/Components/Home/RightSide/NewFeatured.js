@@ -12,9 +12,9 @@ export default function NewFeatured() {
 
     useEffect(() => {
         if (products.length !== 0) {
-            setFeaturedProducts(products.filter(product => product.filter.featured))
-            setNewArrivalProducts(products.filter(product => product.filter.new_arrival))
-            setMostViewProducts(products.filter(product => product.filter.most_view))
+            setFeaturedProducts(products.filter(product => product.isNewFeatured))
+            setNewArrivalProducts(products.filter(product => product.isNewArrival))
+            setMostViewProducts(products.filter(product => product.isMostViewed))
         }
     }, [products])
 
