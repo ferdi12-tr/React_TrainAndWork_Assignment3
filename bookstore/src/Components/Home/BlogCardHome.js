@@ -8,21 +8,21 @@ export default class BlogCardHome extends Component {
             <div className="single-slide">
                 <div className="blog-card">
                     <div className="image">
-                        <img src={blogCart.image} alt="" />
+                        <img src={"/image/blogs/" + blogCart.image} alt="" />
                     </div>
                     <div className="content">
                         <div className="content-header">
                             <div className="date-badge">
                                 <span className="date">
-                                    {blogCart.date.split('-')[2]}
+                                    {blogCart.date}
                                 </span>
                                 <span className="month">
-                                    {blogCart.date.split('-')[1]}
+                                    {blogCart.date}
                                 </span>
                             </div>
                             <h3 className="title"><Link to={"/blogDetail/" + blogCart.slug}>{blogCart.title}</Link></h3>
                         </div>
-                        <p className="meta-para"><i className="fas fa-user-edit" />Post by <a href="#">{blogCart.author}</a></p>
+                        <p className="meta-para"><i className="fas fa-user-edit" />Post by <a href="#">{blogCart.authorUserName}</a></p>
                         <article className="blog-paragraph">
                             <h2 className="sr-only">blog-paragraph</h2>
                             <p>{blogCart.long_desc}</p>

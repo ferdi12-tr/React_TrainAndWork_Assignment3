@@ -39,7 +39,6 @@ export const fetchProducts = () => async (dispatch) => {
     try {
         const response = await fetch("https://localhost:7219/Product/AllProducts")
         const data = await response.json()
-        console.log(data)
         dispatch(productReceived(data))
     } catch (error) {
         dispatch(productRequestFailed(error))

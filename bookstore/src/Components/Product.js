@@ -15,11 +15,11 @@ export default class Product extends Component {
                         <a href="" className="author">
                             Fkoca
                         </a>
-                        <h3><Link to={"productDetail/" + product.slug}>{product.title}</Link></h3>
+                        <h3><Link to={"productDetail/" + product.slug}>{product.name}</Link></h3>
                     </div>
                     <div className="product-card--body">
                         <div className="card-image">
-                            <img src={product.image} alt="" />
+                            <img src={"image/products/" + product.image} alt="" />
                             <div className="hover-contents">
                                 <Link to={"productDetail/" + product.slug} className="hover-image">
                                     <img src={product.image} alt="" />

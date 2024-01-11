@@ -37,8 +37,9 @@ export default blogSlice.reducer
 export const fetchBlogs = () => async (dispatch) => {
     dispatch(blogLoading())
     try {
-        const response = await fetch("http://localhost:3000/Blogs")
+        const response = await fetch("https://localhost:7219/Blog/GetBlogs")
         const data = await response.json()
+        console.log(data)
         dispatch(blogReceived(data))
     } catch (error) {
         dispatch(blogRequestFailed(error))
