@@ -4,14 +4,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { fetchComment } from '../Redux/commentSlice';
 import Comment from '../Components/Comment';
+import { getAuthToken, getCurrentUser } from '../Utils/auth';
 
 export default function BlogDetail() {
 
     const { slug } = useParams();
+
     const [blog, setBlog] = useState(null)
+    const [comment, setComment] = useState("")
+    const [displayMessage, setDisplayMessage] = useState("")
+
     const blogs = useSelector(state => state.blogs.blogs)
     const comments = useSelector(state => state.comments.comments)
     const dispatch = useDispatch()
+
+
 
     useEffect(() => {
         let blog = blogs.find(blog => blog.slug === slug)
@@ -20,6 +27,43 @@ export default function BlogDetail() {
             dispatch(fetchComment(blog.blogId))
         }
     }, [slug])
+
+
+
+    const whenCommentSubmitted = async (event) => {
+        event.preventDefault();
+
+        let user = getCurrentUser();
+        let token = getAuthToken();
+        if (user === null || token === "EXPIRED") {
+            setDisplayMessage("Please login or register");
+            return;
+        }
+
+        let commentInfo = {
+            blogComment: comment,
+            userId: user.id,
+            blogId: blog.blogId,
+            date: new Date().toUTCString()
+        }
+        try {
+            let response = await fetch("https://localhost:7219/Blog/AddComment", {
+                method: "POST",
+                headers: {
+                    'accept': 'text/plain',
+                    'Content-Type': 'application/json;charset=utf-8',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(commentInfo)
+            })
+
+            if (response.ok) {
+                setDisplayMessage("Thank You For Your Comment.");
+                dispatch(fetchComment(blog.blogId))
+            }
+        } catch (error) { }
+    }
+
 
     return (
         <>
@@ -64,10 +108,7 @@ export default function BlogDetail() {
                                     <h3 className="d-none sr-only">blob-article</h3>
                                     <p className="p-0">{blog.blogContent}</p>
                                 </article>
-                                <footer className="blog-meta">
-                                    <div> <a href="#">3 comments </a> / TAGS: <a href="#">fashion</a>, <a href="#">t-shirt</a>,
-                                        <a href="#">white</a></div>
-                                </footer>
+
                             </div>
                         </div>
                         <div className="share-block mb--50">
@@ -88,36 +129,18 @@ export default function BlogDetail() {
                         </div>
                         <div className="replay-form-wrapper">
                             <h3 className="mt-0">LEAVE A REPLY</h3>
-                            <p>Your email address will not be published. Required fields are marked *</p>
-                            <form action="" className="blog-form">
+                            {displayMessage && <h3 className='text-danger'>{displayMessage}</h3>}
+                            <form onSubmit={(e) => whenCommentSubmitted(e)} className="blog-form">
                                 <div className="row">
                                     <div className="col-12">
                                         <div className="form-group">
                                             <label htmlFor="message">Comment</label>
-                                            <textarea name="message" id="message" cols={30} rows={10} className="form-control" defaultValue={""} />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4">
-                                        <div className="form-group">
-                                            <label htmlFor="name">Name *</label>
-                                            <input type="text" id="name" className="form-control" />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4">
-                                        <div className="form-group">
-                                            <label htmlFor="email">Email *</label>
-                                            <input type="text" id="email" className="form-control" />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-4">
-                                        <div className="form-group">
-                                            <label htmlFor="website">Website</label>
-                                            <input type="text" id="website" className="form-control" />
+                                            <textarea onChange={(e) => setComment(e.target.value)} name="message" id="message" required cols={30} rows={10} className="form-control" defaultValue={""} />
                                         </div>
                                     </div>
                                     <div className="col-lg-4">
                                         <div className="submit-btn">
-                                            <a href="#" className="btn btn-black">Post Comment</a>
+                                            <button type='submit' href="#" className="btn btn-black">Post Comment</button>
                                         </div>
                                     </div>
                                 </div>

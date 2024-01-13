@@ -7,11 +7,10 @@ export default function Comment({ comment }) {
                 <img src="/./image/icon/author-logo.png" alt="" />
             </div>
             <div className="comment-text">
-                <h5 className="author"> <a href="#">{comment.name}</a></h5>
+                <h5 className="author"> <a href="#">{comment.authorName}</a></h5>
                 <span className="time">{comment.date}</span>
                 <p>{comment.blogComment}</p>
             </div>
-            <a href="#" className="btn btn-outlined--primary btn-rounded reply-btn">Reply</a>
         </div>
     )
 }
