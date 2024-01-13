@@ -38,8 +38,6 @@ function App() {
     }
 
     const tokenDuration = getTokenExpireDate()
-    console.log(tokenDuration)
-
     setTimeout(() => {
       localStorage.removeItem("auth")
       navigate("/login")

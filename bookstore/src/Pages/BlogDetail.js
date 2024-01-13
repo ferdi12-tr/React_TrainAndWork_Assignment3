@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
+import { fetchComment } from '../Redux/commentSlice';
+import Comment from '../Components/Comment';
 
 export default function BlogDetail() {
 
     const { slug } = useParams();
     const [blog, setBlog] = useState(null)
     const blogs = useSelector(state => state.blogs.blogs)
+    const comments = useSelector(state => state.comments.comments)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         let blog = blogs.find(blog => blog.slug === slug)
         setBlog(blog)
+        if (blog) {
+            dispatch(fetchComment(blog.blogId))
+        }
     }, [slug])
 
     return (
@@ -74,40 +81,10 @@ export default function BlogDetail() {
                             </div>
                         </div>
                         <div className="comment-block-wrapper mb--50">
-                            <h3>3 Comments</h3>
-                            <div className="single-comment">
-                                <div className="comment-avatar">
-                                    <img src="/./image/icon/author-logo.png" alt="" />
-                                </div>
-                                <div className="comment-text">
-                                    <h5 className="author"> <a href="#"> Author</a></h5>
-                                    <span className="time">October 8, 2014 at 12:38 pm</span>
-                                    <p>Ame No Parade</p>
-                                </div>
-                                <a href="#" className="btn btn-outlined--primary btn-rounded reply-btn">Reply</a>
-                            </div>
-                            <div className="single-comment">
-                                <div className="comment-avatar">
-                                    <img src="/./image/icon/author-logo.png" alt="" />
-                                </div>
-                                <div className="comment-text">
-                                    <h5 className="author"> <a href="#">Jack</a></h5>
-                                    <span className="time">January 19, 2018 at 3:00 am</span>
-                                    <p>just a nice post</p>
-                                </div>
-                                <a href="#" className="btn btn-outlined--primary btn-rounded reply-btn">Reply</a>
-                            </div>
-                            <div className="single-comment">
-                                <div className="comment-avatar">
-                                    <img src="/./image/icon/author-logo.png" alt="" />
-                                </div>
-                                <div className="comment-text">
-                                    <h5 className="author"> <a href="#">Dexter</a></h5>
-                                    <span className="time">august 31, 2021 at 3:30 am</span>
-                                    <p>Awesome Post </p>
-                                </div>
-                                <a href="#" className="btn btn-outlined--primary btn-rounded reply-btn">Reply</a>
-                            </div>
+                            {comments && <h3>{comments.length} Comments</h3>}
+                            {comments && comments.map((comment, index) => {
+                                return <Comment key={index} comment={comment}></Comment>
+                            })}
                         </div>
                         <div className="replay-form-wrapper">
                             <h3 className="mt-0">LEAVE A REPLY</h3>
