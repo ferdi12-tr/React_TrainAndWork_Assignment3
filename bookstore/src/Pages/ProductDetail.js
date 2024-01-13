@@ -1,18 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import LookModal from '../Components/LookModal'
-import Product from '../Components/Product'
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../Redux/cartSlice';
 
 export default function ProductDetail() {
     const { slug } = useParams();
-    const [product, setProduct] = useState(null)
-    const products = useSelector(state => state.products.products)
 
+    const dispatch = useDispatch()
+
+    const [product, setProduct] = useState(null)
+    const [quatity, setQuantity] = useState(1)
+
+    const products = useSelector(state => state.products.products)
     useEffect(() => {
         let product = products.find(product => product.slug === slug)
         setProduct(product)
     }, [slug])
+
+    const addToCartBtn = (product) => {
+        let cartObject = {
+            image: product.image,
+            productName: product.name,
+            price: product.price,
+            quantity: quatity,
+        }
+        console.log(cartObject)
+        dispatch(addToCart(cartObject))
+    }
 
     return (
         <>{product &&
@@ -44,15 +59,8 @@ export default function ProductDetail() {
                             </div>
                             <div className="col-lg-7">
                                 <div className="product-details-info pl-lg--30 ">
-                                    <p className="tag-block">Tags: <a href="#">Movado</a>, <a href="#">Omega</a></p>
                                     <h3 className="product-title">{product.name}</h3>
-                                    <ul className="list-unstyled">
-                                        <li>Ex Tax: <span className="list-value"> £60.24</span></li>
-                                        <li>Brands: <a href="#" className="list-value font-weight-bold"> Canon</a></li>
-                                        <li>Product Code: <span className="list-value"> model1</span></li>
-                                        <li>Reward Points: <span className="list-value"> 200</span></li>
-                                        <li>Availability: <span className="list-value"> In Stock</span></li>
-                                    </ul>
+
                                     <div className="price-block">
                                         <span className="price-new">£{product.price}</span>
                                         <del className="price-old">£{product.price + 10}</del>
@@ -79,11 +87,13 @@ export default function ProductDetail() {
                                     <div className="add-to-cart-row">
                                         <div className="count-input-block">
                                             <span className="widget-label">Qty</span>
-                                            <input type="number" className="form-control text-center" defaultValue={1} />
+                                            <input onChange={(e) => setQuantity(e.target.value)} type="number" className="form-control text-center" defaultValue={1} />
                                         </div>
                                         <div className="add-cart-btn">
-                                            <a href="#" className="btn btn-outlined--primary"><span className="plus-icon">+</span>Add to
-                                                Cart</a>
+                                            <button onClick={() => addToCartBtn(product)} className="btn btn-outlined--primary">
+                                                <span className="plus-icon">+</span>
+                                                Add to Cart
+                                            </button>
                                         </div>
                                     </div>
                                     <div className="compare-wishlist-row">

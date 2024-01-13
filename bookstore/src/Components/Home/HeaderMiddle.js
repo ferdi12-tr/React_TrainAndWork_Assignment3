@@ -1,8 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Cookies from 'js-cookie'
+import { useSelector } from 'react-redux';
+
 
 export default function HeaderMiddle() {
+
+    const cartList = useSelector(state => state.carts.carts)
+
+    const calculateGrandTotal = () => {
+        console.log("calculateGrandTotal")
+        let grandTotal = 0
+        cartList?.forEach(cart => {
+            grandTotal += cart.price * cart.quantity
+        });
+        return grandTotal
+    }
 
     return (
         <div className="header-middle pt--10 pb--10">
@@ -34,35 +47,33 @@ export default function HeaderMiddle() {
                                 <div className="cart-block">
                                     <div className="cart-total">
                                         <span className="text-number">
-                                            1
+                                            {cartList?.length}
                                         </span>
                                         <span className="text-item">
                                             Shopping Cart
                                         </span>
                                         <span className="price">
-                                            £0.00
+                                            ${calculateGrandTotal()}
                                             <i className="fas fa-chevron-down" />
                                         </span>
                                     </div>
                                     <div className="cart-dropdown-block">
-                                        <div className=" single-cart-block ">
-                                            <div className="cart-product">
-                                                <a href="product-details.html" className="image">
-                                                    <img src="image/products/cart-product-1.jpg" alt="" />
-                                                </a>
-                                                <div className="content">
-                                                    <h3 className="title"><a href="product-details.html">Kodak PIXPRO
-                                                        Astro Zoom AZ421 16 MP</a>
-                                                    </h3>
-                                                    <p className="price"><span className="qty">1 ×</span> £87.34</p>
-                                                    <button className="cross-btn"><i className="fas fa-times" /></button>
+                                        {cartList?.map((cart, index) => {
+                                            return <div key={index} className=" single-cart-block ">
+                                                <div className="cart-product">
+                                                    <span className='image'><img src={"/image/products/" + cart.image} alt="" /></span>
+
+                                                    <div className="content">
+                                                        <h3 className="title">{cart.productName}</h3>
+                                                        <p className="price"><span className="qty">{cart.quantity} ×</span> ${cart.price}</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        })}
                                         <div className=" single-cart-block ">
                                             <div className="btn-block">
-                                                <a href="cart.html" className="btn">View Cart <i className="fas fa-chevron-right" /></a>
-                                                <a href="checkout.html" className="btn btn--primary">Check Out <i className="fas fa-chevron-right" /></a>
+                                                <Link to="/cart" className="btn">View Cart <i className="fas fa-chevron-right" /></Link>
+                                                <Link to="/checkout" className="btn btn--primary">Check Out <i className="fas fa-chevron-right" /></Link>
                                             </div>
                                         </div>
                                     </div>

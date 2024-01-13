@@ -25,10 +25,10 @@ export default class Product extends Component {
                                     <img src={product.image} alt="" />
                                 </Link>
                                 <div className="hover-btns">
-                                    <a href="cart.html" className="single-btn">
+                                    <a href="#" className="single-btn">
                                         <i className="fas fa-shopping-basket" />
                                     </a>
-                                    <a href="wishlist.html" className="single-btn">
+                                    <a href="#" className="single-btn">
                                         <i className="fas fa-heart" />
                                     </a>
                                     <a href="" data-bs-toggle="modal" data-bs-target="#quickModal" className="single-btn">
