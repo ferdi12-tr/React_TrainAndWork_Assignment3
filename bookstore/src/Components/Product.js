@@ -13,7 +13,7 @@ export default class Product extends Component {
                 <div className="product-card">
                     <div className="product-header">
                         <a href="" className="author">
-                            Fkoca
+                            {product.authorName}
                         </a>
                         <h3><Link to={"productDetail/" + product.slug}>{product.name}</Link></h3>
                     </div>

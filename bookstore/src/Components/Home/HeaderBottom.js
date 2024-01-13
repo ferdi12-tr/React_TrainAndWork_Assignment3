@@ -44,27 +44,24 @@ export default function HeaderBottom() {
                         <div className="main-navigation flex-lg-right">
                             <ul className="main-menu menu-right li-last-0">
                                 <li className="menu-item">
-                                    <a href="">Home</a>
-                                </li>
-                                <li className="menu-item">
-                                    <a href="">shop </a>
+                                    <Link to="/">Home</Link>
                                 </li>
                                 <li className="menu-item has-children">
                                     <a href="">Pages <i className="fas fa-chevron-down dropdown-arrow" /></a>
                                     <ul className="sub-menu">
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="login-register.html">Login Register</a></li>
-                                        <li><a href="my-account.html">My Account</a></li>
-                                        <li><a href="order-complete.html">Order Complete</a></li>
+                                        <li><Link to="/cart">Cart</Link></li>
+                                        <li><Link to="/checkout">Checkout</Link></li>
+                                        <li><Link to="/wishlist">Wishlist</Link></li>
+                                        <li><Link to="/login">Login Register</Link></li>
+                                        {/* <li><a href="my-account.html">My Account</a></li> */}
+                                        {/* <li><a href="order-complete.html">Order Complete</a></li> */}
                                     </ul>
                                 </li>
                                 <li className="menu-item">
                                     <Link to={"/blogs"}>Blog</Link>
                                 </li>
                                 <li className="menu-item">
-                                    <a href="contact.html">Contact</a>
+                                    <Link to="/contact">Contact</Link>
                                 </li>
                             </ul>
                         </div>
