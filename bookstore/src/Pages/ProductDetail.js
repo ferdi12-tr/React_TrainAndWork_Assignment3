@@ -21,6 +21,7 @@ export default function ProductDetail() {
     const addToCartBtn = (product) => {
         let cartObject = {
             image: product.image,
+            productId: product.productId,
             productName: product.name,
             price: product.price,
             quantity: quatity,

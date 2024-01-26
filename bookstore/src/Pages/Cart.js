@@ -89,7 +89,7 @@ export default function Cart() {
                                         <h2>Grand Total <span className="text-primary">${calculateGrandTotal()}</span></h2>
                                     </div>
                                     <div className="cart-summary-button">
-                                        <a href="checkout.html" className="checkout-btn c-btn btn--primary">Checkout</a>
+                                        <Link to="/checkout" className="checkout-btn c-btn btn--primary">Checkout</Link>
                                     </div>
                                 </div>
                             </div>
